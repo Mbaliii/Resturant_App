@@ -1,6 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MainScreen, LoginScreen, RegisterScreen } from '../screens';
+import Booking from '../screens/Booking';
 
 const AuthStack = createNativeStackNavigator();
 
@@ -15,4 +16,3 @@ const AuthStackNavigator = () => {
 };
 
 export default AuthStackNavigator;
-

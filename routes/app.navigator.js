@@ -8,13 +8,15 @@ import {
   MapsScreen,
   SettingsScreen,
   FavouritesScreen,
-  BookNow
 } from '../screens';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { RestaurantContextProvider } from '../context/restaurant/restaurant.context';
 import { LocationContextProvider } from '../context/locations/location.context';
 import { FavouritesContextProvider } from '../context/favourites/favourites.context';
 import { AuthContextProvider } from '../context/Auth/auth.context';
+import Booking from '../screens/Booking';
+import ReservationList from '../screens/ReservationList';
+
 
 const HomeStack = createNativeStackNavigator();
 
@@ -26,6 +28,8 @@ const HomeStackScreen = () => {
       }}>
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Details" component={DetailsScreen} />
+      <HomeStack.Screen name="Booking" component={Booking} />
+      <HomeStack.Screen name="ReservationList" component={ReservationList} />
     </HomeStack.Navigator>
   );
 };

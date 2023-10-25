@@ -7,16 +7,14 @@ function RestaurantScreen() {
     const [restaurants, setRestaurants] = useState([]);
     const navigation = useNavigation();
 
-    // Use local data or any other data source instead of Firebase
     useEffect(() => {
-        // Fetch data from your data source and set it to the 'restaurants' state
         const restaurantList = [
             {
                 id: 1,
                 name: 'Restaurant 1',
                 description: 'Description for Restaurant 1',
                 location: 'Location 1',
-                image: 'image1', // Make sure 'image1' corresponds to your images array
+                image: 'image1', 
             },
             {
                 id: 2,
@@ -25,18 +23,16 @@ function RestaurantScreen() {
                 location: 'Location 2',
                 image: 'image2',
             },
-            // Add more restaurant data as needed
+            
         ];
 
         setRestaurants(restaurantList);
     }, []);
 
     const addRestaurantToData = (restaurant) => {
-        // Implement the logic to add a restaurant to your data source
     };
 
     const deleteRestaurant = (restaurantId) => {
-        // Implement the logic to delete a restaurant from your data source
     };
 
     const navigateToEditScreen = (restaurant) => {
@@ -68,7 +64,6 @@ function RestaurantScreen() {
                     <View key={restaurant.id} style={styles.card}>
                         <Image style={styles.image} source={images[restaurant.image]} />
                         <Text style={styles.name}>{restaurant.name}</Text>
-                        {/* <Text style{styles.description}>{restaurant.description}</Text> */}
                         <Text style={styles.location}>{restaurant.location}</Text>
                         <Button title="Add to Reservations" onPress={() => addRestaurantToData(restaurant)} />
                         <Button title="Edit" onPress={() => navigateToEditScreen(restaurant)} />

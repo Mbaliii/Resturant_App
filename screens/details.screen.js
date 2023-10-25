@@ -59,41 +59,29 @@ export const DetailsScreen = ({ route, navigation }) => {
           </View>
         </View>
 
+
         <ScrollView>
-          <List.Accordion
-            title="Breakfast"
-            left={props => <List.Icon {...props} icon="bread-slice" />}
-            expanded={isBreakfastOpen}
-            onPress={() => setIsBreakfastOpen(!isBreakfastOpen)}>
-            <List.Item title="First item" />
-            <List.Item title="Second item" />
-          </List.Accordion>
-
-          <List.Accordion
-            title="Lunch"
-            left={props => <List.Icon {...props} icon="hamburger" />}
-            expanded={isLunchOpen}
-            onPress={() => setIsLunchOpen(!isLunchOpen)}>
-            <List.Item title="First item" />
-            <List.Item title="Second item" />
-          </List.Accordion>
-
           <List.Accordion
             title="Dinner"
             left={props => <List.Icon {...props} icon="food-variant" />}
             expanded={isDinnerOpen}
             onPress={() => setIsDinnerOpen(!isDinnerOpen)}>
-            <List.Item onPress={() => navigation.goBack()} title="Book Now" />
-            {/* make this onpress */}
-            <List.Item onPress={() => navigation.goBack()} title="Reserve for later" />
+            <List.Item
+              onPress={() => navigation.navigate("Booking")}
+              title="Book Now"
+            />
+            <List.Item
+              onPress={() => navigation.navigate('Reserve For Later')}
+              title="Reserve for Later"
+            />
           </List.Accordion>
         </ScrollView>
+
       </View>
     </SafeAreaView>
   );
 };
 
-// create theme for fonts and spacings
 const styles = StyleSheet.create({
   container: {
     padding: 20,
